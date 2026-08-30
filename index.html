@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Amul Kool Rose | Refined Refreshment</title>
+  <meta name="description" content="Experience the delicate fusion of pure milk and fragrant roses. A modern indulgence rooted in tradition, crafted for the sophisticated palate.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- Tailwind Config from code.html -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#514345",
+            "outline": "#837375",
+            "surface-container-highest": "#e6e2dc",
+            "tertiary-fixed": "#ffd9dc",
+            "secondary-fixed-dim": "#a6c8ff",
+            "on-surface": "#1c1c18",
+            "tertiary-fixed-dim": "#ffb2ba",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#6b3743",
+            "soft-petal": "#FFB7C5",
+            "secondary-container": "#7ab0ff",
+            "secondary": "#1d5fa8",
+            "primary-container": "#ffb7c5",
+            "outline-variant": "#d6c2c4",
+            "tertiary": "#a5374b",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#001c3b",
+            "on-error-container": "#93000a",
+            "surface-container": "#f1ede7",
+            "secondary-fixed": "#d5e3ff",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "surface-bright": "#fdf9f3",
+            "on-tertiary-container": "#992d42",
+            "surface-tint": "#864e5a",
+            "surface-variant": "#e6e2dc",
+            "background": "#fdf9f3",
+            "on-primary-fixed": "#360c19",
+            "on-tertiary-fixed-variant": "#861e35",
+            "primary": "#864e5a",
+            "inverse-on-surface": "#f4f0ea",
+            "surface-container-high": "#ebe8e2",
+            "surface-container-low": "#f7f3ed",
+            "primary-fixed": "#ffd9df",
+            "error": "#ba1a1a",
+            "inverse-surface": "#31302d",
+            "deep-rose": "#63001E",
+            "on-error": "#ffffff",
+            "inverse-primary": "#fbb3c1",
+            "on-tertiary-fixed": "#400010",
+            "on-primary-container": "#7b4551",
+            "tertiary-container": "#ffb8bf",
+            "on-background": "#1c1c18",
+            "on-secondary-container": "#00417e",
+            "ink-black": "#140008",
+            "cream-surface": "#FDF9F3",
+            "on-secondary-fixed-variant": "#004787",
+            "amul-blue": "#00529B",
+            "surface-dim": "#dddad4",
+            "surface": "#fdf9f3",
+            "primary-fixed-dim": "#fbb3c1"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "20px",
+            "margin-desktop": "64px",
+            "gutter": "24px",
+            "container-max": "1280px",
+            "unit": "8px"
+          },
+          "fontFamily": {
+            "headline-md": ["EB Garamond", "serif"],
+            "headline-lg": ["EB Garamond", "serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "label-sm": ["JetBrains Mono", "monospace"],
+            "display-lg": ["EB Garamond", "serif"],
+            "headline-lg-mobile": ["EB Garamond", "serif"],
+            "body-md": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+            "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+            "display-lg": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["36px", { "lineHeight": "42px", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    ::selection {
+      background-color: #FFB7C5;
+      color: #63001E;
+    }
+  </style>
+</head>
+<body class="bg-cream-surface font-body-lg text-body-lg overflow-x-hidden loading">
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="brand-pill">
+        <span class="sparkle">✦</span> AMUL KOOL
+      </div>
+      <div class="loader-ring-wrapper">
+        <svg class="loader-ring" viewBox="0 0 120 120">
+          <circle class="loader-ring-bg" cx="60" cy="60" r="52"></circle>
+          <circle id="loader-circle" class="loader-ring-progress" cx="60" cy="60" r="52"></circle>
+        </svg>
+        <div class="loader-percent" id="loader-percent">0%</div>
+      </div>
+      <div class="loader-text-status" id="loader-status">Preloading 240 Ultra-HD Frames...</div>
+      <div class="loader-bar-bg">
+        <div class="loader-bar-fill" id="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transparent Floating Navigation Bar with Menu & Smooth Scroll -->
+  <header class="main-header transparent-nav" id="main-header">
+    <nav class="nav-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" id="logo">
+        <span class="logo-badge">Amul</span>
+        <span class="logo-text">KOOL<span class="logo-dot">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-links">
+        <li>
+          <a href="#hero" class="nav-link active">Experience</a>
+        </li>
+        <li>
+          <a href="#menu" class="nav-link">Menu</a>
+        </li>
+        <li>
+          <a href="#quote-section" class="nav-link">Story</a>
+        </li>
+        <li>
+          <a href="#reservations" class="nav-link">Reservations</a>
+        </li>
+      </ul>
+
+      <!-- Action Area -->
+      <div class="nav-actions">
+        <!-- Ambient Sound Toggle -->
+        <button class="sound-toggle-btn" id="sound-btn" title="Toggle Ambient Audio">
+          <i class="fa-solid fa-volume-xmark" id="sound-icon"></i>
+          <span class="sound-wave-bars">
+            <span></span><span></span><span></span><span></span>
+          </span>
+        </button>
+
+        <!-- CTA Order Button -->
+        <button class="btn btn-primary" id="open-order-btn">
+          <span>Reserve a Table</span>
+          <i class="fa-solid fa-calendar-check text-xs"></i>
+        </button>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="mobile-menu-btn md:hidden" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Dropdown Menu Drawer -->
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+      <ul class="flex flex-col gap-4 p-6">
+        <li>
+          <a href="#hero" class="mobile-nav-link text-deep-rose font-medium text-lg flex items-center justify-between">
+            <span>1. Hero & Product Reveal</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </li>
+        <li>
+          <a href="#menu" class="mobile-nav-link text-deep-rose font-medium text-lg flex items-center justify-between">
+            <span>2. Restaurant Menu (6 Gourmet Shakes)</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </li>
+        <li>
+          <a href="#quote-section" class="mobile-nav-link text-deep-rose font-medium text-lg flex items-center justify-between">
+            <span>Our Story</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </li>
+        <li>
+          <a href="#reservations" class="mobile-nav-link text-deep-rose font-medium text-lg flex items-center justify-between">
+            <span>3. Table Reservations Form</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       SECTION 1: HERO SECTION (WITH CALL-TO-ACTION & 240-FRAME ANIMATION)
+       ========================================================================= -->
+  <section class="scrolly-container" id="hero">
+    <!-- Sticky Canvas Track Window -->
+    <div class="scrolly-sticky">
+      <!-- High DPI Full-Screen Canvas Rendering The 240 Frames -->
+      <canvas id="sequence-canvas"></canvas>
+      
+      <!-- Subtle Ambient Lighting Accent -->
+      <div class="canvas-ambient-glow"></div>
+
+      <!-- Hero Brand Heading & Call-To-Action (Centered, Unobstructed, Fades away on 30% scroll) -->
+      <div class="hero-brand-overlay" id="hero-brand-overlay">
+        <div class="hero-brand-content text-center">
+          <span class="hero-eyebrow-tag font-label-sm text-label-sm text-deep-rose tracking-widest uppercase bg-soft-petal/40 px-4 py-1.5 rounded-full mb-3 inline-block">
+            Signature Collection
+          </span>
+          <h1 class="hero-brand-title font-display-lg text-deep-rose leading-none">
+            Amul Kool
+          </h1>
+          <p class="hero-brand-subtitle font-headline-md text-headline-md italic text-amul-blue mt-2">
+            The taste of India
+          </p>
+
+          <!-- Hero Call-To-Action -->
+          <div class="mt-5 flex items-center justify-center gap-3.5 hero-cta-row">
+            <a href="#menu" class="font-body-md text-sm font-semibold text-cream-surface bg-deep-rose px-6 py-2.5 rounded-full hover:bg-ink-black transition-all duration-300 shadow-md inline-flex items-center gap-2 cursor-pointer">
+              <span>Explore Menu</span>
+              <span class="material-symbols-outlined text-sm">restaurant_menu</span>
+            </a>
+            <a href="#reservations" class="font-body-md text-sm font-semibold text-deep-rose bg-white/70 hover:bg-white backdrop-blur-md border border-deep-rose/25 px-6 py-2.5 rounded-full transition-all duration-300 shadow-sm inline-flex items-center gap-2 cursor-pointer">
+              <span>Book Table</span>
+              <span class="material-symbols-outlined text-sm">calendar_month</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transparent Side Badge for View Specifications -->
+      <div class="hero-side-specs-container">
+        <a href="#menu" class="hero-side-specs-btn group">
+          <span class="specs-icon-circle">
+            <span class="material-symbols-outlined text-sm animate-bounce">arrow_downward</span>
+          </span>
+          <span class="specs-btn-text">View Menu & Specs</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 2: MENU (WITH DISHES & MILK SHAKES IN A 3-COLUMN GRID)
+       ========================================================================= -->
+  <main>
+    <section class="py-24 md:py-32 bg-soft-petal/10 px-margin-mobile md:px-margin-desktop scroll-mt-20" id="menu">
+      <div class="max-w-container-max mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-12 reveal">
+          <span class="font-label-sm text-label-sm text-deep-rose tracking-widest uppercase bg-soft-petal/40 px-3.5 py-1.5 rounded-full mb-3 inline-block">
+            Artisanal Milk Shakes & Chilled Delights
+          </span>
+          <h2 class="font-headline-lg text-headline-lg text-deep-rose mb-4">The Kool Shake Menu</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            Slow-churned with pure toned dairy, fresh farm infusions, and authentic heritage spices. Served chilled at 4°C.
+          </p>
+        </div>
+
+        <!-- Specifications Quick Highlights Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16 reveal">
+          <div class="bg-white/80 backdrop-blur-sm border border-deep-rose/10 p-6 rounded-2xl text-center shadow-sm">
+            <span class="material-symbols-outlined text-deep-rose text-3xl mb-2">local_drink</span>
+            <h4 class="font-headline-md text-xl text-deep-rose font-bold">200 ml</h4>
+            <p class="font-body-md text-sm text-on-surface-variant">Glass Bottle Pack</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm border border-deep-rose/10 p-6 rounded-2xl text-center shadow-sm">
+            <span class="material-symbols-outlined text-deep-rose text-3xl mb-2">ac_unit</span>
+            <h4 class="font-headline-md text-xl text-deep-rose font-bold">4°C Chill</h4>
+            <p class="font-body-md text-sm text-on-surface-variant">Optimum Serving Temp</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm border border-deep-rose/10 p-6 rounded-2xl text-center shadow-sm">
+            <span class="material-symbols-outlined text-deep-rose text-3xl mb-2">eco</span>
+            <h4 class="font-headline-md text-xl text-deep-rose font-bold">100% Pure</h4>
+            <p class="font-body-md text-sm text-on-surface-variant">Real Milk & Fresh Infusion</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm border border-deep-rose/10 p-6 rounded-2xl text-center shadow-sm">
+            <span class="material-symbols-outlined text-deep-rose text-3xl mb-2">verified</span>
+            <h4 class="font-headline-md text-xl text-deep-rose font-bold">180 Days</h4>
+            <p class="font-body-md text-sm text-on-surface-variant">Sterilized Shelf Life</p>
+          </div>
+        </div>
+
+        <!-- Dishes & Milkshakes Displayed in a 3-Column Grid (6 Gourmet Selections) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8" id="shake-menu-grid">
+          
+          <!-- Shake 1: Classic Rose Milk -->
+          <article class="flex flex-col text-left group reveal bg-white/85 p-6 rounded-3xl border border-deep-rose/10 shadow-sm hover:shadow-lg transition-all duration-300" style="transition-delay: 0.1s;">
+            <div class="w-full aspect-[4/5] mb-6 bg-cream-surface rounded-2xl overflow-hidden relative shadow-sm transition-transform duration-500 group-hover:-translate-y-1.5">
+              <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_24BRHYjHJu1ekbBdivVDdNn1Ne034Wa9CU0AwJb0Hwe-HZSNOswcHcEejBslWPH11EJDDZkQsU6797AkBgUAmhb3wCXE4GiycKS0htx0hcGH3j3DBJ4LmJW4sIIGMxSSJxszNopdDVSDowyhRGvn4Rs78-r8OX2be49frCaWgv0rhHCKvYvxpqjwXWo9drJGeQaVjzGYGTSj09RlsHTe0mCmv4QnbwLPSFZhFdKDHLeKhKxbQM6DYg')"></div>
+              <div class="absolute top-4 right-4">
+                <span class="bg-white/95 backdrop-blur-sm text-deep-rose font-label-sm text-xs px-3 py-1 rounded-full shadow-sm font-bold tracking-wide">
+                  ★ Bestseller
+                </span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-headline-md text-2xl text-deep-rose font-bold">Classic Rose Shake</h3>
+              <span class="font-body-lg text-xl text-deep-rose font-bold">₹35</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
+              The iconic signature recipe. Pure toned milk infused with authentic Damascus rose petals for a floral, soothing finish.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-deep-rose/10 mt-auto">
+              <span class="font-label-sm text-xs text-amul-blue font-semibold">200ml • 140 kcal</span>
+              <button class="menu-order-btn text-xs font-semibold text-deep-rose hover:text-white bg-soft-petal/40 hover:bg-deep-rose px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 cursor-pointer" onclick="document.getElementById('open-order-btn').click()">
+                <span>Order</span>
+                <span class="material-symbols-outlined text-xs">add</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Shake 2: Elaichi Mist Cardamom -->
+          <article class="flex flex-col text-left group reveal bg-white/85 p-6 rounded-3xl border border-deep-rose/10 shadow-sm hover:shadow-lg transition-all duration-300" style="transition-delay: 0.2s;">
+            <div class="w-full aspect-[4/5] mb-6 bg-cream-surface rounded-2xl overflow-hidden relative shadow-sm transition-transform duration-500 group-hover:-translate-y-1.5">
+              <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAn9e8LJkhJKhwq0HPTefuQf7z29NbFsTbcZjtVKm1HlJFzR-N8PcUFvVCEhqMWWIC8qvI_2IUg3gZuJnuzA97Gj_c1XCix-yXxsaLwYHDqeMYthQ0g_arGFIUM-FLSNxUA1eIm41rDmnpCQ4NKHCDFKodWJ1GBI1SxPye6lRpgN8KTclFzb2OeYtL2m8wvjo5OmGJSvlVoRMx7RYosc55r0d-Biizn9zhaotpV3KH0M8Icgj74NWykiw')"></div>
+              <div class="absolute top-4 right-4">
+                <span class="bg-white/95 backdrop-blur-sm text-deep-rose font-label-sm text-xs px-3 py-1 rounded-full shadow-sm font-bold tracking-wide">
+                  Aromatic Classic
+                </span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-headline-md text-2xl text-deep-rose font-bold">Elaichi Mist Shake</h3>
+              <span class="font-body-lg text-xl text-deep-rose font-bold">₹35</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
+              A cooling blend of velvety whole dairy and hand-crushed Idukki green cardamom. A subtle, refreshing spiced masterpiece.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-deep-rose/10 mt-auto">
+              <span class="font-label-sm text-xs text-amul-blue font-semibold">200ml • 142 kcal</span>
+              <button class="menu-order-btn text-xs font-semibold text-deep-rose hover:text-white bg-soft-petal/40 hover:bg-deep-rose px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 cursor-pointer" onclick="document.getElementById('open-order-btn').click()">
+                <span>Order</span>
+                <span class="material-symbols-outlined text-xs">add</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Shake 3: Kesar Treat Saffron -->
+          <article class="flex flex-col text-left group reveal bg-white/85 p-6 rounded-3xl border border-deep-rose/10 shadow-sm hover:shadow-lg transition-all duration-300" style="transition-delay: 0.3s;">
+            <div class="w-full aspect-[4/5] mb-6 bg-cream-surface rounded-2xl overflow-hidden relative shadow-sm transition-transform duration-500 group-hover:-translate-y-1.5">
+              <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCli83XYCIZm5fGh_K_J1hTlxWypN1Xf4x9UKeWrrWutpmytNuBKrI82Jr9PnT0nNNi_AxYISnSWeTQiOvKQSza956SLyDk72iqkpI6jpTPb1-S0SyxQ2JkkhVEUdcc2hE7LDObmSsGk7IUMIRv3dwCBdOPF2LaaTxtZ5XAWlkBOzULYFEklBWTXxBrV7ZBpvu0Yva2lI2P8ZRFnEjxqB35TkMIOrYqxLHCncETidMtQZNjNic5Ew8jMQ')"></div>
+              <div class="absolute top-4 right-4">
+                <span class="bg-white/95 backdrop-blur-sm text-deep-rose font-label-sm text-xs px-3 py-1 rounded-full shadow-sm font-bold tracking-wide">
+                  Royal Saffron
+                </span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-headline-md text-2xl text-deep-rose font-bold">Kesar Treat Shake</h3>
+              <span class="font-body-lg text-xl text-deep-rose font-bold">₹40</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
+              Rich milk infused with pure Kashmiri saffron threads, toasted almond flakes, and delicate golden heritage aroma.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-deep-rose/10 mt-auto">
+              <span class="font-label-sm text-xs text-amul-blue font-semibold">200ml • 148 kcal</span>
+              <button class="menu-order-btn text-xs font-semibold text-deep-rose hover:text-white bg-soft-petal/40 hover:bg-deep-rose px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 cursor-pointer" onclick="document.getElementById('open-order-btn').click()">
+                <span>Order</span>
+                <span class="material-symbols-outlined text-xs">add</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Shake 4: Pista Badam Royal Shake -->
+          <article class="flex flex-col text-left group reveal bg-white/85 p-6 rounded-3xl border border-deep-rose/10 shadow-sm hover:shadow-lg transition-all duration-300" style="transition-delay: 0.1s;">
+            <div class="w-full aspect-[4/5] mb-6 bg-cream-surface rounded-2xl overflow-hidden relative shadow-sm transition-transform duration-500 group-hover:-translate-y-1.5">
+              <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('./pista-shake.jpg')"></div>
+              <div class="absolute top-4 right-4">
+                <span class="bg-white/95 backdrop-blur-sm text-deep-rose font-label-sm text-xs px-3 py-1 rounded-full shadow-sm font-bold tracking-wide">
+                  ✦ Chef's Special
+                </span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-headline-md text-2xl text-deep-rose font-bold">Pista Badam Shake</h3>
+              <span class="font-body-lg text-xl text-deep-rose font-bold">₹45</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
+              Stone-ground Iranian pistachios, velvety almond paste, and rich dairy cream topped with crunchy roasted dry fruit slivers.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-deep-rose/10 mt-auto">
+              <span class="font-label-sm text-xs text-amul-blue font-semibold">200ml • 155 kcal</span>
+              <button class="menu-order-btn text-xs font-semibold text-deep-rose hover:text-white bg-soft-petal/40 hover:bg-deep-rose px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 cursor-pointer" onclick="document.getElementById('open-order-btn').click()">
+                <span>Order</span>
+                <span class="material-symbols-outlined text-xs">add</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Shake 5: Belgian Chocolate Velvet Shake -->
+          <article class="flex flex-col text-left group reveal bg-white/85 p-6 rounded-3xl border border-deep-rose/10 shadow-sm hover:shadow-lg transition-all duration-300" style="transition-delay: 0.2s;">
+            <div class="w-full aspect-[4/5] mb-6 bg-cream-surface rounded-2xl overflow-hidden relative shadow-sm transition-transform duration-500 group-hover:-translate-y-1.5">
+              <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('./chocolate-shake.jpg')"></div>
+              <div class="absolute top-4 right-4">
+                <span class="bg-white/95 backdrop-blur-sm text-deep-rose font-label-sm text-xs px-3 py-1 rounded-full shadow-sm font-bold tracking-wide">
+                  Indulgent
+                </span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-headline-md text-2xl text-deep-rose font-bold">Choco Velvet Shake</h3>
+              <span class="font-body-lg text-xl text-deep-rose font-bold">₹45</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
+              Decadent Belgian dark cocoa simmered into thick whole milk, finished with melted fudge swirl and shaved chocolate curls.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-deep-rose/10 mt-auto">
+              <span class="font-label-sm text-xs text-amul-blue font-semibold">200ml • 165 kcal</span>
+              <button class="menu-order-btn text-xs font-semibold text-deep-rose hover:text-white bg-soft-petal/40 hover:bg-deep-rose px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 cursor-pointer" onclick="document.getElementById('open-order-btn').click()">
+                <span>Order</span>
+                <span class="material-symbols-outlined text-xs">add</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Shake 6: Alphonso Mango Silk Shake (REAL AUTHENTIC MANGO SHAKE IMAGE) -->
+          <article class="flex flex-col text-left group reveal bg-white/85 p-6 rounded-3xl border border-deep-rose/10 shadow-sm hover:shadow-lg transition-all duration-300" style="transition-delay: 0.3s;">
+            <div class="w-full aspect-[4/5] mb-6 bg-cream-surface rounded-2xl overflow-hidden relative shadow-sm transition-transform duration-500 group-hover:-translate-y-1.5">
+              <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('./mango-shake.jpg')"></div>
+              <div class="absolute top-4 right-4">
+                <span class="bg-white/95 backdrop-blur-sm text-deep-rose font-label-sm text-xs px-3 py-1 rounded-full shadow-sm font-bold tracking-wide">
+                  Seasonal Sun
+                </span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-headline-md text-2xl text-deep-rose font-bold">Mango Silk Shake</h3>
+              <span class="font-body-lg text-xl text-deep-rose font-bold">₹45</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
+              Sun-ripened Ratnagiri Alphonso mango pulp churned with chilled milk and a hint of vanilla cream. The taste of tropical sunshine.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-deep-rose/10 mt-auto">
+              <span class="font-label-sm text-xs text-amul-blue font-semibold">200ml • 150 kcal</span>
+              <button class="menu-order-btn text-xs font-semibold text-deep-rose hover:text-white bg-soft-petal/40 hover:bg-deep-rose px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 cursor-pointer" onclick="document.getElementById('open-order-btn').click()">
+                <span>Order</span>
+                <span class="material-symbols-outlined text-xs">add</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Aesthetic Editorial Quote Intermission -->
+    <section class="py-24 bg-deep-rose overflow-hidden relative flex items-center justify-center scroll-mt-20" id="quote-section">
+      <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at center, #FFB7C5 0%, transparent 70%);"></div>
+      <div class="max-w-4xl mx-auto text-center px-margin-mobile relative z-10 reveal">
+        <span class="material-symbols-outlined text-soft-petal text-4xl mb-6 block" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-cream-surface leading-snug">
+          "A momentary escape. The perfect balance of rich dairy and botanical freshness."
+        </h2>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: COOL & MODERN RESTAURANT RESERVATIONS (CONTACT FORM)
+         ======================================================================= -->
+    <section class="py-24 md:py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto scroll-mt-20" id="reservations">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+        
+        <!-- Left Side: Atmosphere & Parlor Details -->
+        <div class="w-full lg:w-5/12 reveal">
+          <div class="inline-flex items-center gap-2 bg-soft-petal/40 border border-deep-rose/15 px-3.5 py-1.5 rounded-full text-deep-rose font-label-sm text-label-sm tracking-widest uppercase mb-4">
+            <span class="material-symbols-outlined text-sm">restaurant</span> Rose Lounge & Dining
+          </div>
+          
+          <h2 class="font-headline-lg text-headline-lg text-deep-rose mb-6 leading-tight">
+            Reserve Your Table <br/>
+            <span class="italic text-amul-blue">& Tasting Journey</span>
+          </h2>
+          
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+            Step into our floral-scented modern parlour lounge. Indulge in freshly prepared rose milk flights, artisanal desserts, and warm hospitality.
+          </p>
+
+          <!-- Highlights List -->
+          <div class="space-y-6 mb-10">
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/70 border border-deep-rose/10 shadow-sm">
+              <span class="material-symbols-outlined text-deep-rose text-2xl mt-0.5">room_service</span>
+              <div>
+                <h4 class="font-body-md font-semibold text-deep-rose">Chef's Signature Flight</h4>
+                <p class="font-body-md text-sm text-on-surface-variant">Live cold-poured rose milk pairings with authentic pistachio crisps.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/70 border border-deep-rose/10 shadow-sm">
+              <span class="material-symbols-outlined text-deep-rose text-2xl mt-0.5">schedule</span>
+              <div>
+                <h4 class="font-body-md font-semibold text-deep-rose">Operating Hours</h4>
+                <p class="font-body-md text-sm text-on-surface-variant">Mon – Sun: 11:30 AM to 11:30 PM • Walk-ins & Pre-bookings</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/70 border border-deep-rose/10 shadow-sm">
+              <span class="material-symbols-outlined text-deep-rose text-2xl mt-0.5">local_parking</span>
+              <div>
+                <h4 class="font-body-md font-semibold text-deep-rose">Valet & Location</h4>
+                <p class="font-body-md text-sm text-on-surface-variant">Amul Dairy Road, Anand, Gujarat • Complimentary Valet Service</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Concierge Help -->
+          <div class="flex items-center gap-3 text-on-surface-variant font-body-md text-sm border-t border-deep-rose/10 pt-6">
+            <span class="material-symbols-outlined text-amul-blue">phone_in_talk</span>
+            <span>Concierge Desk: <strong class="text-deep-rose">+91 (02692) 258-KOOL</strong></span>
+          </div>
+        </div>
+
+        <!-- Right Side: Interactive Reservation Booking Form Card -->
+        <div class="w-full lg:w-7/12 bg-white/95 backdrop-blur-xl p-8 md:p-12 rounded-3xl border border-deep-rose/15 shadow-xl reveal" style="transition-delay: 0.2s;">
+          <div class="flex items-center justify-between border-b border-deep-rose/10 pb-6 mb-8">
+            <div>
+              <span class="font-label-sm text-label-sm text-deep-rose tracking-wider uppercase font-semibold">Table Booking</span>
+              <h3 class="font-headline-md text-2xl md:text-3xl text-deep-rose font-bold mt-1">Instant Reservation</h3>
+            </div>
+            <span class="material-symbols-outlined text-deep-rose/40 text-4xl">table_bar</span>
+          </div>
+
+          <form id="reservation-form" class="space-y-8">
+            
+            <!-- Step 1: Party Size Selection -->
+            <div>
+              <label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-3">1. Select Party Size & Seating</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="party-size-selector">
+                <button type="button" class="party-chip active" data-size="2" data-type="Intimate Table">
+                  <span class="material-symbols-outlined text-lg">person</span>
+                  <span class="font-semibold text-sm">2 Guests</span>
+                  <span class="text-xs opacity-75">Intimate Table</span>
+                </button>
+                <button type="button" class="party-chip" data-size="4" data-type="Lounge Booth">
+                  <span class="material-symbols-outlined text-lg">group</span>
+                  <span class="font-semibold text-sm">4 Guests</span>
+                  <span class="text-xs opacity-75">Lounge Booth</span>
+                </button>
+                <button type="button" class="party-chip" data-size="6" data-type="VIP Parlor">
+                  <span class="material-symbols-outlined text-lg">groups</span>
+                  <span class="font-semibold text-sm">6+ Guests</span>
+                  <span class="text-xs opacity-75">VIP Parlor</span>
+                </button>
+                <button type="button" class="party-chip" data-size="1" data-type="Bar Counter">
+                  <span class="material-symbols-outlined text-lg">wine_bar</span>
+                  <span class="font-semibold text-sm">Tasting Bar</span>
+                  <span class="text-xs opacity-75">Chef Counter</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Date & Time Slot Selection -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2" for="res-date">2. Reservation Date</label>
+                <div class="relative">
+                  <input type="date" id="res-date" name="date" class="w-full bg-cream-surface/60 border border-deep-rose/20 rounded-xl px-4 py-3 text-deep-rose font-medium focus:ring-2 focus:ring-deep-rose focus:border-deep-rose outline-none" required/>
+                </div>
+              </div>
+              <div>
+                <label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2" for="res-time">3. Experience Time Slot</label>
+                <select id="res-time" name="time" class="w-full bg-cream-surface/60 border border-deep-rose/20 rounded-xl px-4 py-3 text-deep-rose font-medium focus:ring-2 focus:ring-deep-rose focus:border-deep-rose outline-none" required>
+                  <option value="12:30 PM">12:30 PM (Afternoon Lunch Chill)</option>
+                  <option value="04:00 PM">04:00 PM (Rose Tea & Dessert Pairing)</option>
+                  <option value="07:00 PM" selected>07:00 PM (Sunset Lounge Dinner)</option>
+                  <option value="09:30 PM">09:30 PM (Late Night Chilled Lounge)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Step 3: Experience Tasting Add-on -->
+            <div>
+              <label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2">4. Complimentary Welcome Add-on</label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <label class="tasting-option selected">
+                  <input type="radio" name="tasting" value="Classic Rose Flight" checked class="hidden"/>
+                  <span class="material-symbols-outlined text-deep-rose text-xl mb-1">local_cafe</span>
+                  <span class="font-semibold text-xs text-deep-rose">Classic Flight</span>
+                  <span class="text-[11px] text-on-surface-variant">Free Rose Tasting</span>
+                </label>
+                <label class="tasting-option">
+                  <input type="radio" name="tasting" value="Saffron Milk Delight" class="hidden"/>
+                  <span class="material-symbols-outlined text-deep-rose text-xl mb-1">star</span>
+                  <span class="font-semibold text-xs text-deep-rose">Kesar Treat</span>
+                  <span class="text-[11px] text-on-surface-variant">Saffron Infusion</span>
+                </label>
+                <label class="tasting-option">
+                  <input type="radio" name="tasting" value="Elaichi Mist Sip" class="hidden"/>
+                  <span class="material-symbols-outlined text-deep-rose text-xl mb-1">spa</span>
+                  <span class="font-semibold text-xs text-deep-rose">Elaichi Mist</span>
+                  <span class="text-[11px] text-on-surface-variant">Aromatic Cardamom</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 4: Guest Contact Details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+              <div>
+                <label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2" for="res-name">Guest Full Name</label>
+                <input type="text" id="res-name" name="name" placeholder="Alexander Wright" class="w-full bg-cream-surface/60 border border-deep-rose/20 rounded-xl px-4 py-3 text-deep-rose placeholder-outline/50 focus:ring-2 focus:ring-deep-rose focus:border-deep-rose outline-none font-medium" required/>
+              </div>
+              <div>
+                <label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2" for="res-phone">Phone / WhatsApp</label>
+                <input type="tel" id="res-phone" name="phone" placeholder="+91 98765 43210" class="w-full bg-cream-surface/60 border border-deep-rose/20 rounded-xl px-4 py-3 text-deep-rose placeholder-outline/50 focus:ring-2 focus:ring-deep-rose focus:border-deep-rose outline-none font-medium" required/>
+              </div>
+            </div>
+
+            <!-- Occasion / Special Request -->
+            <div>
+              <label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2" for="res-notes">Special Occasion or Dietary Note (Optional)</label>
+              <input type="text" id="res-notes" name="notes" placeholder="e.g. Anniversary celebration, birthday, window booth requested" class="w-full bg-cream-surface/60 border border-deep-rose/20 rounded-xl px-4 py-3 text-deep-rose placeholder-outline/50 focus:ring-2 focus:ring-deep-rose focus:border-deep-rose outline-none font-medium text-sm"/>
+            </div>
+
+            <!-- Live Summary & Confirm CTA -->
+            <div class="p-5 rounded-2xl bg-soft-petal/20 border border-deep-rose/15 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="text-left w-full sm:w-auto">
+                <span class="text-xs font-semibold text-deep-rose uppercase tracking-wider">Booking Preview:</span>
+                <p class="font-body-md text-sm text-deep-rose font-medium mt-0.5" id="booking-preview-text">
+                  2 Guests (Intimate Table) • Today at 07:00 PM
+                </p>
+              </div>
+              <button type="submit" class="w-full sm:w-auto bg-deep-rose hover:bg-ink-black text-cream-surface font-body-md font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap active:scale-95">
+                <span>Confirm Reservation</span>
+                <span class="material-symbols-outlined text-sm">check_circle</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer from code.html -->
+  <footer class="w-full py-16 bg-cream-surface border-t border-deep-rose/10 fade-in transition-opacity duration-500">
+    <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-gutter max-w-container-max mx-auto">
+      <!-- Brand Logo -->
+      <div class="font-headline-md text-headline-md text-deep-rose mb-6 md:mb-0">
+        AMUL KOOL
+      </div>
+      <!-- Links -->
+      <ul class="flex flex-wrap justify-center gap-6 md:gap-8 mb-6 md:mb-0">
+        <li>
+          <a class="font-body-md text-body-md text-on-surface-variant hover:text-deep-rose transition-colors" href="#">
+            Privacy
+          </a>
+        </li>
+        <li>
+          <a class="font-body-md text-body-md text-on-surface-variant hover:text-deep-rose transition-colors" href="#">
+            Terms
+          </a>
+        </li>
+        <li>
+          <a class="font-body-md text-body-md text-on-surface-variant hover:text-deep-rose transition-colors" href="#reservations">
+            Reservations
+          </a>
+        </li>
+        <li>
+          <a class="font-body-md text-body-md text-on-surface-variant hover:text-deep-rose transition-colors" href="#">
+            Wholesale
+          </a>
+        </li>
+      </ul>
+      <!-- Copyright -->
+      <div class="font-body-md text-body-md text-on-surface-variant text-center md:text-right">
+        © 2026 Amul Kool Rose. Refined Indulgence.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick Order Modal -->
+  <div class="modal-backdrop" id="order-modal">
+    <div class="modal-dialog glass-card">
+      <button class="modal-close-btn" id="close-modal-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-badge"><i class="fa-solid fa-bolt"></i> FAST 10-MIN CHILL DELIVERY</div>
+        <h3>Order Amul KOOL Shake</h3>
+        <p>Direct from local Amul Parlours & chilled warehouses.</p>
+      </div>
+
+      <div class="pack-selector">
+        <label class="pack-option selected" data-price="180" data-pack="6">
+          <input type="radio" name="pack" checked>
+          <div class="pack-info">
+            <div class="pack-name">6-Pack Chiller Pack</div>
+            <div class="pack-desc">6 x 200ml Bottles</div>
+          </div>
+          <div class="pack-price">₹180</div>
+        </label>
+
+        <label class="pack-option" data-price="340" data-pack="12">
+          <input type="radio" name="pack">
+          <div class="pack-info">
+            <div class="pack-name">12-Pack Family Crate <span class="discount-pill">SAVE 10%</span></div>
+            <div class="pack-desc">12 x 200ml Bottles</div>
+          </div>
+          <div class="pack-price">₹340</div>
+        </label>
+
+        <label class="pack-option" data-price="640" data-pack="24">
+          <input type="radio" name="pack">
+          <div class="pack-info">
+            <div class="pack-name">24-Pack Party Box <span class="discount-pill">BEST VALUE</span></div>
+            <div class="pack-desc">24 x 200ml Bottles</div>
+          </div>
+          <div class="pack-price">₹640</div>
+        </label>
+      </div>
+
+      <div class="quantity-control-row">
+        <span>Quantity:</span>
+        <div class="quantity-picker">
+          <button class="qty-btn" id="qty-minus"><i class="fa-solid fa-minus"></i></button>
+          <span class="qty-num" id="qty-val">1</span>
+          <button class="qty-btn" id="qty-plus"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+
+      <div class="order-summary-row">
+        <span>Total Payable:</span>
+        <strong class="total-amount" id="total-amount-display">₹180</strong>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="confirm-order-btn">
+        <i class="fa-solid fa-bag-shopping"></i> Proceed to Quick Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-message">Added to cart successfully!</span>
+  </div>
+
+  <!-- Main JavaScript Logic -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
